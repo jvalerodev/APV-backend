@@ -15,7 +15,7 @@ db.authenticate()
     .then(() => console.log('Base de datos conectada'))
     .catch(error => console.log(error));
 
-const allowedDomains = [process.env.FRONTEND_URL];
+const allowedDomains = process.env.FRONTEND_URL.split(' ');
 
 const corsOptions = {
     origin: (origin, callback) => {
